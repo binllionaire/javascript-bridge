@@ -1,7 +1,11 @@
+const BridgeMaker = require("./BridgeMaker");
+const BridgeRandomNumberGenerator = require("./BridgeRandomNumberGenerator");
 const InputView = require("./InputView");
+
 class App {
   play() {
-    InputView.readBridgeSize();
+    let bridgeSize = InputView.readBridgeSize();
+    let bridge = BridgeMaker.makeBridge(bridgeSize,BridgeRandomNumberGenerator.generate());
   }
 }
 const app = new App();
